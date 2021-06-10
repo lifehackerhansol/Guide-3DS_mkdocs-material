@@ -157,30 +157,48 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            
-            
-            
+            <li class="nav-item" data-level="1"><a href="#flashing-ntrboot-dsi" class="nav-link">Flashing ntrboot (DSi)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#required-reading" class="nav-link">Required Reading</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#what-you-need" class="nav-link">What You Need</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#instructions" class="nav-link">Instructions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>{% include toc title="Table of Contents" %}</p>
-<h3 id="required-reading">Required Reading</h3>
+<h1 id="flashing-ntrboot-dsi">Flashing ntrboot (DSi)</h1>
+<hr />
+<h2 id="required-reading">Required Reading</h2>
 <p>Before proceeding, ensure you have read all of the information on <a href="ntrboot">ntrboot</a></p>
 <p>This method requires temporary access to a Nintendo DSi that is compatible with your flashcart. This method uses the flashcart to run the ntrboot flasher <code>.nds</code> file on your DSi. This means that your flashcart must support launching <code>.nds</code> files on your DSi's version. See the flashcart table on <a href="ntrboot">ntrboot</a> for more information.</p>
-<p>Note that in some rare circumstances, it may be possible for the flashing process to <strong>brick</strong> a counterfeit flashcart and render it permanently unusable. This is unlikely, but nevertheless only original listed flashcarts are supported. To reduce the chance of receiving a counterfeit card, it is recommended that you use a reputable site to buy your flashcart (such as <a href="http://www.nds-card.net/">NDS Card</a>)
-{: .notice--danger}</p>
-<h3 id="what-you-need">What You Need</h3>
+<div class="admonition danger">
+<p class="admonition-title">Important</p>
+<p>Note that in some rare circumstances, it may be possible for the flashing process to <strong>brick</strong> a counterfeit flashcart and render it permanently unusable. This is unlikely, but nevertheless only original listed flashcarts are supported. To reduce the chance of receiving a counterfeit card, it is recommended that you use a reputable site to buy your flashcart (such as <a href="http://www.nds-card.com/">NDS Card</a>)</p>
+</div>
+<h2 id="what-you-need">What You Need</h2>
 <ul>
 <li>Your ntrboot compatible flashcart</li>
-<li>Two devices </li>
+<li>Two devices <ul>
 <li><strong>The source DSi</strong>: the Nintendo DSi which is compatible with your flashcart</li>
 <li><strong>The target 3DS</strong>: the 3DS family device on stock firmware</li>
+</ul>
+</li>
 <li>The latest release of <a href="https://github.com/ntrteam/ds_ntrboot_flasher/releases/latest">ds_ntrboot_flasher</a> <em>(<code>dsi</code> flasher; not the standard flasher)</em></li>
 </ul>
-<h3 id="instructions">Instructions</h3>
-<h4 id="section-i-prep-work">Section I - Prep Work</h4>
+<h2 id="instructions">Instructions</h2>
+<h3 id="section-i-prep-work">Section I - Prep Work</h3>
 <ol>
 <li>Power off <strong>the source DSi</strong></li>
 <li>Insert your flashcart's SD card into your computer</li>
@@ -188,7 +206,7 @@
 <li>Reinsert your flashcart's SD card back into your flashcart</li>
 <li>Insert your ntrboot compatible DS / DSi flashcart into <strong>the source DSi</strong></li>
 </ol>
-<h4 id="section-ii-flashing-ntrboot">Section II - Flashing ntrboot</h4>
+<h3 id="section-ii-flashing-ntrboot">Section II - Flashing ntrboot</h3>
 <ol>
 <li>Launch <code>ds_ntrboot_flasher_dsi.nds</code> on <strong>the source DSi</strong> using your flashcart</li>
 <li>Press (A) to continue</li>
@@ -200,8 +218,9 @@
 <li>Select "EXIT"</li>
 </ol>
 <hr />
+<div class="admonition tip">
 <h3 id="continue-to-installing-boot9strap-ntrboot">Continue to <a href="installing-boot9strap-(ntrboot)">Installing boot9strap (ntrboot)</a></h3>
-<p>{: .notice--primary}</p></div>
+</div></div>
             </div>
         </div>
 
