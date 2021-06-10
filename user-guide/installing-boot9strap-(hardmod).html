@@ -157,16 +157,26 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            
-            
-            
+            <li class="nav-item" data-level="1"><a href="#installing-boot9strap-hardmod" class="nav-link">Installing boot9strap (Hardmod)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#required-reading" class="nav-link">Required Reading</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#instructions" class="nav-link">Instructions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>{% include toc title="Table of Contents" %}</p>
-<h3 id="required-reading">Required Reading</h3>
+<h1 id="installing-boot9strap-hardmod">Installing boot9strap (Hardmod)</h1>
+<hr />
+<h2 id="required-reading">Required Reading</h2>
 <p>An excellent guide to getting a hardmod can be found <a href="https://gbatemp.net/threads/414498/">here</a>.</p>
 <p>This is a currently working implementation of the "FIRM partitions known-plaintext" exploit detailed <a href="https://www.3dbrew.org/wiki/3DS_System_Flaws">here</a>.</p>
 <p>To use the <a href="https://wikipedia.org/wiki/Magnet_URI_scheme">magnet</a> links on this page, you will need a torrent client like <a href="http://dev.deluge-torrent.org/wiki/Download">Deluge</a>.</p>
@@ -176,8 +186,10 @@
 <ul>
 <li>Your NAND image extracted using your <a href="https://gbatemp.net/threads/414498/">hardmod</a></li>
 <li>The latest release of <a href="https://github.com/SciresM/boot9strap/releases/latest">boot9strap</a> <em>(standard boot9strap; not the <code>devkit</code> file, not the <code>ntr</code> file)</em></li>
-<li>The latest version of <a href="https://github.com/ihaveamac/hardmod-b9s-installer/releases/latest">hardmod-b9s-installer</a></li>
+<li>The latest version of <a href="https://github.com/ihaveamac/hardmod-b9s-installer/releases/latest">hardmod-b9s-installer</a><ul>
 <li>Windows users can use the compiled <code>.exe</code>, while Mac and Linux users will need to have <a href="https://www.python.org/downloads/">Python 3</a> installed to run the <code>.py</code></li>
+</ul>
+</li>
 <li>The latest release of <a href="https://github.com/LumaTeam/Luma3DS/releases/latest">Luma3DS</a> </li>
 <li>The <code>.firm</code> corresponding to your device and version:</li>
 </ul>
@@ -361,8 +373,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="instructions">Instructions</h3>
-<h4 id="section-i-prep-work">Section I - Prep Work</h4>
+<h2 id="instructions">Instructions</h2>
+<h3 id="section-i-prep-work">Section I - Prep Work</h3>
 <ol>
 <li>Power off your device</li>
 <li>Insert your SD card into your computer</li>
@@ -375,28 +387,37 @@
 <li>Use your hardmod to create a NAND backup</li>
 <li>Move your NAND backup to the hardmod-b9s-installer folder on your computer and rename it to <code>NAND.bin</code></li>
 </ol>
-<h4 id="section-ii-installing-boot9strap">Section II - Installing boot9strap</h4>
+<h3 id="section-ii-installing-boot9strap">Section II - Installing boot9strap</h3>
 <ol>
-<li>Run hardmod-b9s-installer</li>
+<li>Run hardmod-b9s-installer<ul>
 <li>Windows Users: Run <code>install-b9s.exe</code></li>
 <li>Mac and Linux Users: Run <code>install-b9s.py</code></li>
+</ul>
+</li>
 <li>Flash your outputted <code>NAND-patched.bin</code> to your device with your hardmod</li>
 <li>Power off your device</li>
 <li>Disconnect your hardmod</li>
 <li>Power on your device</li>
 </ol>
-<h4 id="section-iii-configuring-luma3ds">Section III - Configuring Luma3DS</h4>
+<h3 id="section-iii-configuring-luma3ds">Section III - Configuring Luma3DS</h3>
 <ol>
-<li>Your device should have booted into the Luma3DS configuration menu</li>
+<li>Your device should have booted into the Luma3DS configuration menu<ul>
 <li>If you get a black screen, <a href="troubleshooting#black-screen-on-sysnand-boot-after-installing-boot9strap">follow this troubleshooting guide</a></li>
-<li>Use the (A) button and the D-Pad to turn on the following:</li>
+</ul>
+</li>
+<li>Use the (A) button and the D-Pad to turn on the following:<ul>
 <li><strong>"Show NAND or user string in System Settings"</strong></li>
-<li>Press (Start) to save and reboot</li>
+</ul>
+</li>
+<li>Press (Start) to save and reboot<ul>
 <li>If you get an error, just continue the next page</li>
+</ul>
+</li>
 </ol>
 <hr />
+<div class="admonition tip">
 <h3 id="continue-to-finalizing-setup">Continue to <a href="finalizing-setup">Finalizing Setup</a></h3>
-<p>{: .notice--primary}</p></div>
+</div></div>
             </div>
         </div>
 
