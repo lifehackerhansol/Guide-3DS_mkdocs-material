@@ -157,14 +157,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            
-            
+            <li class="nav-item" data-level="1"><a href="#finalizing-setup" class="nav-link">Finalizing Setup"</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>{% include toc title="Table of Contents" %}</p>
+<h1 id="finalizing-setup">Finalizing Setup"</h1>
+<hr />
 <h3 id="required-reading">Required Reading</h3>
 <p>The file <code>boot.firm</code> is what is launched by boot9strap itself after it finishes loading off of NAND, and can be any valid arm9 payload in the FIRM format. This file can be replaced at any time, although Luma3DS allows for the launch of other arm9 payloads in the FIRM format using the Luma3DS chainloader.</p>
 <p>In this case, we use Luma3DS by <a href="https://github.com/LumaTeam/">LumaTeam</a> to boot a patched SysNAND directly, allowing us to completely bypass the need for any kind of EmuNAND, vastly simplifying the usage of a hacked 3DS in addition to saving SD card space.</p>
@@ -215,10 +218,14 @@
 <li>Power on your device</li>
 </ol>
 <h4 id="section-ii-updating-the-system">Section II - Updating the System</h4>
-<p>If, while following a previous version of this guide, you CTRTransfered your <em>New 3DS</em> to 2.1.0, you should now <a href="godmode9-usage#restoring-a-nand-backup">restore your NAND backup</a> before doing this section.
-{: .notice--danger}</p>
-<p>If, before following this guide, you already had an EmuNAND setup and would like to move the contents of your previous EmuNAND to your new SysNAND CFW, now is the time to <a href="move-emunand">follow Move EmuNAND</a> before doing this section.
-{: .notice--info}</p>
+<div class="admonition danger">
+<p class="admonition-title">Important</p>
+<p>If, while following a previous version of this guide, you CTRTransfered your <em>New 3DS</em> to 2.1.0, you should now <a href="godmode9-usage#restoring-a-nand-backup">restore your NAND backup</a> before doing this section.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">EmuNAND</p>
+<p>If, before following this guide, you already had an EmuNAND setup and would like to move the contents of your previous EmuNAND to your new SysNAND CFW, now is the time to <a href="move-emunand">follow Move EmuNAND</a> before doing this section.</p>
+</div>
 <ol>
 <li>Update your device by going to System Settings, then "Other Settings", then going all the way to the right and using "System Update"</li>
 <li>Updates while using B9S + Luma (what you have) are safe</li>
@@ -307,14 +314,14 @@
 <li>Power on your device</li>
 </ol>
 <hr />
-<h4 id="information-and-notes">Information and Notes</h4>
-<p>{% capture notice-6 %}
-You will now boot Luma3DS CFW by default.</p>
+<div class="admonition tip">
+<p class="admonition-title">Information and Notes</p>
+<p>You will now boot Luma3DS CFW by default.</p>
 <p>You can now hold (Select) on boot to launch the Luma3DS configuration menu.</p>
 <p>You can now hold (Start) on boot to launch the Luma3DS chainloader menu (note that the Luma3DS chainloader menu is only displayed if there is more than one payload detected).</p>
 <p>You can now hold (Start) + (Select) + (X) on boot to dump the ARM11 bootrom (<code>boot11.bin</code>), the ARM9 bootrom (<code>boot9.bin</code>), and your console unique OTP (<code>OTP.bin</code>) to the <code>/boot9strap/</code> folder on your SD card (note that this will not have any kind of prompt or message).</p>
-<p>You can now press (L) + (Down) + (Select) while the system is booted to open the Rosalina menu integrated into Luma3DS. For a full list of Rosalina features, please see the <a href="https://github.com/AuroraWright/Luma3DS/releases/tag/v8.0">Luma3DS v8.0 Release</a>
-{% endcapture %}</p>
+<p>You can now press (L) + (Down) + (Select) while the system is booted to open the Rosalina menu integrated into Luma3DS. For a full list of Rosalina features, please see the <a href="https://github.com/AuroraWright/Luma3DS/releases/tag/v8.0">Luma3DS v8.0 Release</a></p>
+</div>
 <div class="notice--info">{{ notice-6 | markdownify }}</div>
 
 <p>{% capture notice-6 %}
