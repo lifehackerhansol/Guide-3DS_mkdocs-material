@@ -8,7 +8,7 @@
         <meta name="author" content="NH Discord Server.">
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Making Essential Backups and dumping keys - 3DS Hacks Guide</title>
+        <title>ntrboot - 3DS Hacks Guide</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -157,79 +157,201 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#making-essential-backups-and-dumping-keys" class="nav-link">Making Essential Backups and dumping keys</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#making-a-nand-backup" class="nav-link">Making a NAND Backup</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
+            
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="making-essential-backups-and-dumping-keys">Making Essential Backups and dumping keys</h1>
-<div class="admonition danger">
-<p class="admonition-title">Important</p>
-<p>It is critical to make these backups. Do not skip these steps.</p>
-</div>
-<p>&nbsp;</p>
-<h2 id="making-a-nand-backup">Making a NAND Backup</h2>
-<div class="admonition danger">
-<p class="admonition-title">Important</p>
-<p>A NAND backup is crucial. They can be used to restore the device to a working state in case of emergencies.</p>
-<p>Once the backup is finished, <strong>keep it somewhere safe.</strong> The best backup is the one you have but never need, and the worst backup is the one you need but never made. To save space, it's recommended to compress the end-result with a <code>.zip</code> file or something similar.</p>
-<p>It's highly recommended that you use an SD card that is formatted to FAT32 and has at least 32 gigabytes of space free. This will still work on smaller cards, but it's not ideal.</p>
-</div>
-<h3 id="instructions">Instructions</h3>
-<div class="admonition tip">
-<ol>
-<li>Enter RCM and inject the Hekate payload</li>
-<li>Use the touch screen to navigate to <code>Tools</code> and then <code>Backup eMMC</code></li>
-<li>Tap on <code>eMMC BOOT0 &amp; BOOT1</code></li>
-<li>This should only take a few seconds, but if your SD card is very slow, it may take around a minute.</li>
-<li>Tap on <code>Close</code> to continue, then tap on <code>eMMC RAW GPP</code></li>
-<li>This will take a long time. Expect it to take between 10 minutes to an hour (or more, if your SD card is very slow).</li>
-<li>On FAT32 SD cards or cards that have less than 32 gigabytes of space available, the NAND will be split into 1 or 2 gigabyte parts.<ul>
-<li>Hekate will stop producing these parts when it runs out of space. When this happens, do the following:</li>
-<li>Power off your system</li>
-<li>Insert your SD card into your PC</li>
-<li>Move all files from the <code>backup</code> folder on your SD card to a safe location on your PC</li>
-<li>Insert your SD card into your Switch</li>
-<li>Enter RCM again, inject Hekate again, and continue the backup by tapping on <code>Tools</code> &gt; <code>Backup eMMC</code> &gt; <code>eMMC RAW GPP</code></li>
-<li>Repeat the process until the NAND is completely dumped</li>
-</ul>
-</li>
-<li>Press <code>Close</code> &gt; <code>Home</code> &gt; <code>Power Off</code></li>
-<li>Insert your SD card into your PC</li>
-<li>Copy the <code>backup</code> folder on your SD card to a safe location on your PC</li>
-</ol>
-</div>
-<p>&nbsp;</p>
+<p>{% include toc title="Table of Contents" %}</p>
+<p>If your flashcart comes pre-flashed with ntrboot (or you have already flashed ntrboot to your flashcart), you can skip to <a href="installing-boot9strap-(ntrboot)">Installing boot9strap (ntrboot)</a> for instructions on how to use it.
+{: .notice--success}</p>
+<h3 id="required-reading">Required Reading</h3>
+<p>Installing boot9strap with ntrboot requires a compatible NDS / DSi flashcart to flash ntrboot to. Note that some of these flashcarts are sold pre-flashed with ntrboot.</p>
+<p>While the ntrboot exploit works independently of system version, the ntrboot flasher (which installs the exploit to the cart) is not. This means that, depending on the versions and devices supported by your flashcart, only certain methods may be available to you.</p>
+<p>Note that carts with a "Time Bomb" will no longer be able to launch <code>.nds</code> files when they detect that the system clock has passed a date determined by the flashcart firmware. One method to bypass this is to set the system clock to an earlier date.</p>
+<table>
+<thead>
+<tr>
+<th>Flashcart Name</th>
+<th align="right">Current Price</th>
+<th align="center">"Time Bomb"?</th>
+<th align="center">3DS Versions?</th>
+<th align="center">DSi Versions?</th>
+<th>Other Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.nds-card.com/ProShow.asp?ProID=574"><strong>R4i-SDHC B9S</strong></a></td>
+<td align="right">$15.99</td>
+<td align="center">September 3, 2024</td>
+<td align="center">&lt;= 11.14.0</td>
+<td align="center">&lt;= 1.4.5</td>
+<td><strong>Comes pre-flashed with ntrboot</strong>; can be flashed back to an NDS flashcart.</td>
+</tr>
+<tr>
+<td><a href="http://www.nds-card.com/ProShow.asp?ProID=575"><strong>R4i Gold 3DS Plus</strong></a></td>
+<td align="right">$19.99</td>
+<td align="center">No</td>
+<td align="center">&lt;= 11.14.0</td>
+<td align="center">&lt;= 1.4.5</td>
+<td><strong>Comes pre-flashed with ntrboot</strong> ([internal switch to switch between ntrboot and NDS modes]({{ "/images/screenshots/r4i-gold-3ds-plus.png"</td>
+</tr>
+<tr>
+<td><a href="http://www.nds-card.com/ProShow.asp?ProID=160"><strong>Acekard 2i</strong></a></td>
+<td align="right">$20.99</td>
+<td align="center">No</td>
+<td align="center">&lt;= 4.3.0</td>
+<td align="center">&lt;= 1.4.4</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="http://www.nds-card.com/ProShow.asp?ProID=157"><strong>DSTT</strong></a></td>
+<td align="right">$9.99</td>
+<td align="center">No</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td>Only models with <a href="https://gist.github.com/aspargas2/fa2a70aed3a7fe33f1f10bc264d9fab6">certain flash chips</a> are compatible with ntrboot.</td>
+</tr>
+<tr>
+<td><a href="http://www.nds-card.com/ProShow.asp?ProID=149"><strong>R4i Gold 3DS</strong></a></td>
+<td align="right">$19.99</td>
+<td align="center">No</td>
+<td align="center">&lt;= 11.14.0</td>
+<td align="center">&lt;= 1.4.5</td>
+<td>All RTS revisions are compatible.</td>
+</tr>
+<tr>
+<td><a href="http://www.nds-card.com/ProShow.asp?ProID=146"><strong>R4i-SDHC 3DS RTS</strong></a></td>
+<td align="right">$13.99</td>
+<td align="center">1.85b: September 3, 2024</td>
+<td align="center">&lt;= 11.14.0</td>
+<td align="center">&lt;= 1.4.5</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="http://www.nds-card.com/ProShow.asp?ProID=490"><strong>R4iSDHC GOLD Pro 20XX</strong></a></td>
+<td align="right">$9.99</td>
+<td align="center">4.0b: September 3, 2024</td>
+<td align="center">&lt;= 11.14.0</td>
+<td align="center">&lt;= 1.4.5</td>
+<td>Only r4isdhc <strong>.com</strong> carts marked with a year between 2014 and 2020 are compatible.</td>
+</tr>
+<tr>
+<td><a href="http://www.nds-card.com/ProShow.asp?ProID=450"><strong>R4iSDHC RTS LITE 20XX</strong></a></td>
+<td align="right">$13.99</td>
+<td align="center">4.0b: September 3, 2024</td>
+<td align="center">&lt;= 11.14.0</td>
+<td align="center">&lt;= 1.4.5</td>
+<td>Only r4isdhc <strong>.com</strong> carts marked with a year between 2014 and 2020 are compatible.</td>
+</tr>
+<tr>
+<td><strong>Ace3DS X</strong></td>
+<td align="right"></td>
+<td align="center">No</td>
+<td align="center">&lt;= 11.14.0</td>
+<td align="center">&lt;= 1.4.5</td>
+<td><strong>Comes pre-flashed with ntrboot</strong> (external switch to switch between ntrboot ("3DS") and NDS modes); do not manually flash with ntrboot.</td>
+</tr>
+<tr>
+<td><strong>Ace3DS Plus</strong></td>
+<td align="right"></td>
+<td align="center">No</td>
+<td align="center">&lt;= 11.14.0</td>
+<td align="center">&lt;= 1.4.5</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Gateway Blue</strong></td>
+<td align="right"></td>
+<td align="center">No</td>
+<td align="center">4.1.0 - 4.5.0</td>
+<td align="center">&lt;= 1.4.5</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Infinity 3 R4i</strong></td>
+<td align="right"></td>
+<td align="center">No</td>
+<td align="center">&lt;= 11.14.0</td>
+<td align="center">&lt;= 1.4.5</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>R4 3D Revolution</strong></td>
+<td align="right"></td>
+<td align="center">No</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>R4i Gold 3DS Deluxe "Starter"</strong></td>
+<td align="right"></td>
+<td align="center">No</td>
+<td align="center">4.1.0 - 4.5.0</td>
+<td align="center">&lt;= 1.4.5</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>R4i Ultra</strong></td>
+<td align="right"></td>
+<td align="center">No</td>
+<td align="center">&lt;= 4.3.0</td>
+<td align="center">&lt;= 1.4.5</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>R4i-SDHC 3DS RTS Deluxe Edition</strong></td>
+<td align="right"></td>
+<td align="center">Unknown</td>
+<td align="center">&lt;= 11.14.0</td>
+<td align="center">&lt;= 1.4.5</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>R4iSDHC Dual-Core 20XX</strong></td>
+<td align="right"></td>
+<td align="center">4.0b: September 3, 2024</td>
+<td align="center">&lt;= 11.14.0</td>
+<td align="center">&lt;= 1.4.5</td>
+<td>Only r4isdhc <strong>.com</strong> carts marked with a year between 2014 and 2020 are compatible.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="{{ &quot;/images/screenshots/ntrboot-flashcarts.png&quot; | absolute_url }}" />
+  {: .notice--info}</p>
+<p>Ensure your flashcart is able to launch <code>.nds</code> files on your device before beginning. Some flashcarts may require firmware or "kernel" files to be copied to the flashcart SD card. Consult your specific flashcart's instructions for more information.</p>
+<p>Note that specific methods may have additional compatibility information.</p>
+<p>The usage of this exploit, regardless of flashing method, requires access to a small magnet if the target device is of a folding style (any 3DS family system that is not the old 2DS with a sleep switch). This is because the exploit requires your device to enter sleep mode while still having access to the buttons.</p>
+<p>To test if a magnet will work, hold it on or around the (A)(B)(X)(Y) buttons while the device is powered on to see if it triggers sleep mode. If it does, both displays will go black as long as the magnet is held in that spot.
+{: .notice--info}</p>
+<p>Note that the flashcart will not be able to be used for its standard functions while the ntrboot exploit is installed on it (except for in the case of the Acekard 2i, which remains functional <em>on NDS and custom firmware 3DS systems only</em>). This means that, for most flashcarts, it will not even display on the home menu. There are optional steps at the end of the ntrboot flashing instructions to remove it from your flashcart when you are done.</p>
+<p>Note that in some rare circumstances, it may be possible for the flashing process to <strong>brick</strong> a counterfeit flashcart and render it permanently unusable. This is unlikely, but nevertheless only original listed flashcarts are supported. To reduce the chance of receiving a counterfeit card, it is recommended that you use a reputable site to buy your flashcart (such as <a href="http://www.nds-card.com/">NDS Card</a>)
+{: .notice--danger}</p>
 <hr />
-<p>&nbsp;</p>
-<h3 id="getting-your-consoles-unique-keys">Getting your Console's Unique Keys</h3>
-<div class="admonition danger">
-<p class="admonition-title">Important</p>
-<p>These keys are critical to have. In an extreme emergency, they can be used in conjunction with your NAND backup and other tools to restore your console to a working state.</p>
-</div>
-<div class="admonition tip">
-<ol>
-<li>Enter RCM and inject the Hekate payload.</li>
-<li>Tap the <code>Payloads</code> option, then press Lockpick_RCM.bin.</li>
-<li>If Lockpick_RCM asks you to select between SysNAND and emuMMC, choose SysNAND by navigating with the volume buttons and pressing the power button. If not, continue with step 4.</li>
-<li>If Lockpick_RCM prompts you to <code>Reboot to Sept</code>, press power or either volume button to do so. A "sept by Atmosphere" logo will then display, followed by Lockpick_RCM starting again. If it does <em>not</em> prompt you, continue on to step 5.</li>
-<li>Lockpick_RCM should now inform you that your keys have been saved to <code>/switch/prod.keys</code> on the SD card.</li>
-<li>Press any button to return to the main menu.</li>
-<li>Navigate to 'Power off' with the volume buttons and select it with the power button.</li>
-<li>Insert your SD card into your PC.</li>
-<li>Copy <code>prod.keys</code> from the <code>switch</code> folder on your SD card to a safe location on your PC (it is suggested to copy it to the same place that you copied your NAND backup to).</li>
-</ol>
-</div>
-<p>&nbsp;</p>
-<h4 id="continue-to-launching-cfw"><a href="launching_cfw.html">Continue to Launching CFW <i class="fa fa-arrow-circle-right fa-lg"></i></a></h4></div>
+<h3 id="methods">Methods</h3>
+<hr />
+<h4 id="flashing-ntrboot-3ds-single-system">Flashing ntrboot (3DS Single System)</h4>
+<p>This method requires nothing more than your stock unhacked 3DS and a compatible flashcart. This method uses the flashcart to run the ntrboot flasher <code>.nds</code> file on your 3DS. This means that your flashcart must support launching <code>.nds</code> files on your 3DS's version. See the flashcart table above for more information.</p>
+<p>Continue to <a href="flashing-ntrboot-(3ds-single-system)">Flashing ntrboot (3DS Single System)</a>
+{: .notice--primary}</p>
+<hr />
+<h4 id="flashing-ntrboot-3ds-multi-system">Flashing ntrboot (3DS Multi System)</h4>
+<p>This method requires temporary access to a second 3DS family device that is already running boot9strap. This does not require your flashcart to support either 3DS's version.</p>
+<p>Continue to <a href="flashing-ntrboot-(3ds-multi-system)">Flashing ntrboot (3DS Multi System)</a>
+{: .notice--primary}</p>
+<hr />
+<h4 id="flashing-ntrboot-nds">Flashing ntrboot (NDS)</h4>
+<p>This method requires temporary access to a Nintendo DS or Nintendo DS Lite that is compatible with your flashcart. This method uses the flashcart to run the ntrboot flasher <code>.nds</code> file on your NDS.</p>
+<p>Continue to <a href="flashing-ntrboot-(nds)">Flashing ntrboot (NDS)</a>
+{: .notice--primary}</p>
+<hr />
+<h4 id="flashing-ntrboot-dsi">Flashing ntrboot (DSi)</h4>
+<p>This method requires temporary access to a Nintendo DSi that is compatible with your flashcart. This method uses the flashcart to run the ntrboot flasher <code>.nds</code> file on your DSi. This means that your flashcart must support launching <code>.nds</code> files on your DSi's version. See the flashcart table above for more information.</p>
+<p>Continue to <a href="flashing-ntrboot-(dsi)">Flashing ntrboot (DSi)</a>
+{: .notice--primary}</p></div>
             </div>
         </div>
 

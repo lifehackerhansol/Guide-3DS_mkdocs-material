@@ -157,17 +157,14 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#finalizing-setup" class="nav-link">Finalizing Setup</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
+            
+            
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="finalizing-setup">Finalizing Setup</h1>
-<hr />
+<p>{% include toc title="Table of Contents" %}</p>
 <h3 id="required-reading">Required Reading</h3>
 <p>The file <code>boot.firm</code> is what is launched by boot9strap itself after it finishes loading off of NAND, and can be any valid arm9 payload in the FIRM format. This file can be replaced at any time, although Luma3DS allows for the launch of other arm9 payloads in the FIRM format using the Luma3DS chainloader.</p>
 <p>In this case, we use Luma3DS by <a href="https://github.com/LumaTeam/">LumaTeam</a> to boot a patched SysNAND directly, allowing us to completely bypass the need for any kind of EmuNAND, vastly simplifying the usage of a hacked 3DS in addition to saving SD card space.</p>
@@ -198,8 +195,10 @@
 <ol>
 <li>Power off your device</li>
 <li>Insert your SD card into your computer</li>
-<li>Create a folder named <code>3ds</code> on the root of your SD card if it does not already exist</li>
+<li>Create a folder named <code>3ds</code> on the root of your SD card if it does not already exist<ul>
 <li>This folder stores homebrew applications and data; it is different from the <code>Nintendo 3DS</code> folder that the device automatically generates</li>
+</ul>
+</li>
 <li>Create a folder named <code>cias</code> on the root of your SD card if it does not already exist</li>
 <li>Copy <code>ctr-no-timeoffset.3dsx</code> to the <code>/3ds/</code> folder on your SD card</li>
 <li>Copy <code>FBI.3dsx</code> to the <code>/3ds/</code> folder on your SD card</li>
@@ -216,10 +215,10 @@
 <li>Power on your device</li>
 </ol>
 <h4 id="section-ii-updating-the-system">Section II - Updating the System</h4>
-<p>!&gt; If, while following a previous version of this guide, you CTRTransfered your <em>New 3DS</em> to 2.1.0, you should now <a href="godmode9-usage#restoring-a-nand-backup">restore your NAND backup</a> before doing this section.</p>
-<blockquote>
-<p>If, before following this guide, you already had an EmuNAND setup and would like to move the contents of your previous EmuNAND to your new SysNAND CFW, now is the time to <a href="move-emunand">follow Move EmuNAND</a> before doing this section.</p>
-</blockquote>
+<p>If, while following a previous version of this guide, you CTRTransfered your <em>New 3DS</em> to 2.1.0, you should now <a href="godmode9-usage#restoring-a-nand-backup">restore your NAND backup</a> before doing this section.
+{: .notice--danger}</p>
+<p>If, before following this guide, you already had an EmuNAND setup and would like to move the contents of your previous EmuNAND to your new SysNAND CFW, now is the time to <a href="move-emunand">follow Move EmuNAND</a> before doing this section.
+{: .notice--info}</p>
 <ol>
 <li>Update your device by going to System Settings, then "Other Settings", then going all the way to the right and using "System Update"</li>
 <li>Updates while using B9S + Luma (what you have) are safe</li>
@@ -309,20 +308,31 @@
 </ol>
 <hr />
 <h4 id="information-and-notes">Information and Notes</h4>
-<blockquote>
-<p>You will now boot Luma3DS CFW by default.</p>
+<p>{% capture notice-6 %}
+You will now boot Luma3DS CFW by default.</p>
 <p>You can now hold (Select) on boot to launch the Luma3DS configuration menu.</p>
 <p>You can now hold (Start) on boot to launch the Luma3DS chainloader menu (note that the Luma3DS chainloader menu is only displayed if there is more than one payload detected).</p>
 <p>You can now hold (Start) + (Select) + (X) on boot to dump the ARM11 bootrom (<code>boot11.bin</code>), the ARM9 bootrom (<code>boot9.bin</code>), and your console unique OTP (<code>OTP.bin</code>) to the <code>/boot9strap/</code> folder on your SD card (note that this will not have any kind of prompt or message).</p>
-<p>You can now press (L) + (Down) + (Select) while the system is booted to open the Rosalina menu integrated into Luma3DS. For a full list of Rosalina features, please see the <a href="https://github.com/AuroraWright/Luma3DS/releases/tag/v8.0">Luma3DS v8.0 Release</a>.</p>
-<p>If you would like to upgrade to a bigger sized SD card, all you have to do is format your new SD card as FAT32 and copy paste the contents of the old SD card onto the new SD card.</p>
-<p>If your new SD card is bigger than 32GB, then you have to use a different tool to format it, such as <a href="formatting-sd-(windows)">guiformat (Windows)</a>, <a href="formatting-sd-(mac)">Disk Utility (Mac)</a>, or <a href="formatting-sd-(linux)">cfdisk (Linux)</a>.</p>
-<p>For information on changing your device to another region, check out the <a href="region-changing">Region Changing</a> page.</p>
-<p>For information on using GodMode9's various features, check out the <a href="godmode9-usage">GodMode9 Usage</a> page.</p>
-<p>For information on using Luma3DS's various features, check out <a href="https://github.com/AuroraWright/Luma3DS/wiki/Options-and-usage">its wiki</a>.</p>
-<p>For information on installing custom themes and splash screens, check out <a href="https://themeplaza.art/">Theme Plaza</a>.</p>
-<p>For information on using Gateshark cheat codes on Luma3DS, check out <a href="https://github.com/FlagBrew/Checkpoint">Checkpoint</a>.</p>
-</blockquote></div>
+<p>You can now press (L) + (Down) + (Select) while the system is booted to open the Rosalina menu integrated into Luma3DS. For a full list of Rosalina features, please see the <a href="https://github.com/AuroraWright/Luma3DS/releases/tag/v8.0">Luma3DS v8.0 Release</a>
+{% endcapture %}</p>
+<div class="notice--info">{{ notice-6 | markdownify }}</div>
+
+<p>{% capture notice-6 %}
+If you would like to upgrade to a bigger sized SD card, all you have to do is format your new SD card as FAT32 and copy paste the contents of the old SD card onto the new SD card.</p>
+<p>If your new SD card is bigger than 32GB, then you have to use a different tool to format it, such as <a href="formatting-sd-(windows)">guiformat (Windows)</a>, <a href="formatting-sd-(mac)">Disk Utility (Mac)</a>, or <a href="formatting-sd-(linux)">cfdisk (Linux)</a>.
+{% endcapture %}</p>
+<div class="notice--info">{{ notice-6 | markdownify }}</div>
+
+<p>For information on changing your device to another region, check out the <a href="region-changing">Region Changing</a> page.
+{: .notice--success}</p>
+<p>For information on using GodMode9's various features, check out the <a href="godmode9-usage">GodMode9 Usage</a> page.
+{: .notice--success}</p>
+<p>For information on using Luma3DS's various features, check out <a href="https://github.com/AuroraWright/Luma3DS/wiki/Options-and-usage">its wiki</a>.
+{: .notice--success}</p>
+<p>For information on installing custom themes and splash screens, check out <a href="https://themeplaza.art/">Theme Plaza</a>.
+{: .notice--success}</p>
+<p>For information on using Gateshark cheat codes on Luma3DS, check out <a href="https://github.com/FlagBrew/Checkpoint">Checkpoint</a>.
+{: .notice--success}</p></div>
             </div>
         </div>
 
