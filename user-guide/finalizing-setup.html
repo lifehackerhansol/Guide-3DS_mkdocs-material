@@ -239,11 +239,13 @@
 <p>If, before following this guide, you already had an EmuNAND setup and would like to move the contents of your previous EmuNAND to your new SysNAND CFW, now is the time to <a href="move-emunand">follow Move EmuNAND</a> before doing this section.</p>
 </div>
 <ol>
-<li>Update your device by going to System Settings, then "Other Settings", then going all the way to the right and using "System Update"</li>
+<li>Update your device by going to System Settings, then "Other Settings", then going all the way to the right and using "System Update"<ul>
 <li>Updates while using B9S + Luma (what you have) are safe</li>
 <li>The updater may display a message saying "Your system is up to date" instead of updating. This is normal if you are already up to date; continue with the next section</li>
 <li>If this gives you an error, set your DNS settings to "auto"</li>
 <li>If this still gives you an error, <a href="troubleshooting#system-update-error-after-installing-cfw">follow this troubleshooting guide</a></li>
+</ul>
+</li>
 </ol>
 <h3 id="section-iii-homebrew-launcher">Section III - Homebrew Launcher</h3>
 <ol>
@@ -259,8 +261,10 @@
 <li>Launch the Download Play application</li>
 <li>Your device should load the Homebrew Launcher</li>
 <li>Launch ctr-no-timeoffset from the list of homebrew</li>
-<li>Press (A) to set the offset to 0</li>
+<li>Press (A) to set the offset to 0<ul>
 <li>This will set the system clock to match the RTC date&amp;time (which we will set soon)</li>
+</ul>
+</li>
 <li>Press (Start) to return to the Homebrew Launcher</li>
 <li>Launch FBI from the list of homebrew</li>
 </ol>
@@ -279,8 +283,10 @@
 <h3 id="section-vi-ctrnand-luma3ds">Section VI - CTRNAND Luma3DS</h3>
 <ol>
 <li>Power off your device</li>
-<li>Press and hold (Start), and while holding (Start), power on your device. This will launch GodMode9</li>
+<li>Press and hold (Start), and while holding (Start), power on your device. This will launch GodMode9<ul>
 <li>If you do not boot into GodMode9, ensure that <code>GodMode9.firm</code> is in <code>/luma/payloads/</code> and that <code>payloads</code> is correctly spelled</li>
+</ul>
+</li>
 <li>If you are prompted to create an essential files backup, press (A) to do so, then press (A) to continue once it has completed</li>
 <li>If you are prompted to fix the RTC date&amp;time, press (A) to do so, then set the date and time, then press (A) to continue</li>
 <li>Press (Home) to bring up the action menu</li>
@@ -303,9 +309,11 @@
 <ol>
 <li>Select "Backup Options"</li>
 <li>Select "SysNAND Backup"</li>
-<li>Press (A) to confirm</li>
+<li>Press (A) to confirm<ul>
 <li>This process will take some time</li>
 <li>If you get an error, make sure that you have at least 1.3GB of free space on your SD card</li>
+</ul>
+</li>
 <li>Press (A) to continue</li>
 <li>Press (B) to return to the main menu</li>
 <li>Select "Dump Options"</li>
@@ -318,9 +326,11 @@
 <li>Press (Home) to bring up the action menu</li>
 <li>Select "Poweroff system" to power off your device</li>
 <li>Insert your SD card into your computer</li>
-<li>Copy <code>&lt;date&gt;_&lt;serialnumber&gt;_sysnand_###.bin</code>, <code>&lt;date&gt;_&lt;serialnumber&gt;_sysnand_###.bin.sha</code>, <code>essential.exefs</code>, <code>&lt;serialnumber&gt;_boot9_###.bin</code>, and <code>&lt;serialnumber&gt;_boot11_###.bin</code> from the <code>/gm9/out/</code> folder on your SD card to a safe location on your computer</li>
+<li>Copy <code>&lt;date&gt;_&lt;serialnumber&gt;_sysnand_###.bin</code>, <code>&lt;date&gt;_&lt;serialnumber&gt;_sysnand_###.bin.sha</code>, <code>essential.exefs</code>, <code>&lt;serialnumber&gt;_boot9_###.bin</code>, and <code>&lt;serialnumber&gt;_boot11_###.bin</code> from the <code>/gm9/out/</code> folder on your SD card to a safe location on your computer<ul>
 <li>Make backups in multiple locations (such as online file storage)</li>
 <li>These backups will save you from a brick and/or help you recover files from the NAND image if anything goes wrong in the future</li>
+</ul>
+</li>
 <li>Delete <code>&lt;date&gt;_&lt;serialnumber&gt;_sysnand_###.bin</code> and <code>&lt;date&gt;_&lt;serialnumber&gt;_sysnand_###.bin.sha</code> from the <code>/gm9/out/</code> folder on your SD card after copying it</li>
 <li>Reinsert your SD card into your device</li>
 <li>Power on your device</li>
