@@ -157,16 +157,30 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            
+            <li class="nav-item" data-level="1"><a href="#ntrboot" class="nav-link">ntrboot</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#required-reading" class="nav-link">Required Reading</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#methods" class="nav-link">Methods</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>{% include toc title="Table of Contents" %}</p>
-<p>If your flashcart comes pre-flashed with ntrboot (or you have already flashed ntrboot to your flashcart), you can skip to <a href="installing-boot9strap-(ntrboot)">Installing boot9strap (ntrboot)</a> for instructions on how to use it.
-{: .notice--success}</p>
-<h3 id="required-reading">Required Reading</h3>
+<h1 id="ntrboot">ntrboot</h1>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">Already flashed ntrboot?</p>
+<p>If your flashcart comes pre-flashed with ntrboot (or you have already flashed ntrboot to your flashcart), you can skip to <a href="installing-boot9strap-(ntrboot)">Installing boot9strap (ntrboot)</a> for instructions on how to use it.</p>
+</div>
+<h2 id="required-reading">Required Reading</h2>
 <p>Installing boot9strap with ntrboot requires a compatible NDS / DSi flashcart to flash ntrboot to. Note that some of these flashcarts are sold pre-flashed with ntrboot.</p>
 <p>While the ntrboot exploit works independently of system version, the ntrboot flasher (which installs the exploit to the cart) is not. This means that, depending on the versions and devices supported by your flashcart, only certain methods may be available to you.</p>
 <p>Note that carts with a "Time Bomb" will no longer be able to launch <code>.nds</code> files when they detect that the system clock has passed a date determined by the flashcart firmware. One method to bypass this is to set the system clock to an earlier date.</p>
@@ -320,38 +334,45 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="" src="{{ &quot;/images/screenshots/ntrboot-flashcarts.png&quot; | absolute_url }}" />
-  {: .notice--info}</p>
+<div class="admonition tip">
+<p><img src="img/screenshots/ntrboot-flashcarts.png" alt="ntrboot-compatible Flashcarts"></p>
+</div>
 <p>Ensure your flashcart is able to launch <code>.nds</code> files on your device before beginning. Some flashcarts may require firmware or "kernel" files to be copied to the flashcart SD card. Consult your specific flashcart's instructions for more information.</p>
 <p>Note that specific methods may have additional compatibility information.</p>
 <p>The usage of this exploit, regardless of flashing method, requires access to a small magnet if the target device is of a folding style (any 3DS family system that is not the old 2DS with a sleep switch). This is because the exploit requires your device to enter sleep mode while still having access to the buttons.</p>
-<p>To test if a magnet will work, hold it on or around the (A)(B)(X)(Y) buttons while the device is powered on to see if it triggers sleep mode. If it does, both displays will go black as long as the magnet is held in that spot.
-{: .notice--info}</p>
+<div class="admonition tip">
+<p class="admonition-title">Testing the magnet</p>
+<p>To test if a magnet will work, hold it on or around the (A)(B)(X)(Y) buttons while the device is powered on to see if it triggers sleep mode. If it does, both displays will go black as long as the magnet is held in that spot.</p>
+</div>
 <p>Note that the flashcart will not be able to be used for its standard functions while the ntrboot exploit is installed on it (except for in the case of the Acekard 2i, which remains functional <em>on NDS and custom firmware 3DS systems only</em>). This means that, for most flashcarts, it will not even display on the home menu. There are optional steps at the end of the ntrboot flashing instructions to remove it from your flashcart when you are done.</p>
-<p>Note that in some rare circumstances, it may be possible for the flashing process to <strong>brick</strong> a counterfeit flashcart and render it permanently unusable. This is unlikely, but nevertheless only original listed flashcarts are supported. To reduce the chance of receiving a counterfeit card, it is recommended that you use a reputable site to buy your flashcart (such as <a href="http://www.nds-card.com/">NDS Card</a>)
-{: .notice--danger}</p>
+<div class="admonition danger">
+<p class="admonition-title">Important</p>
+<p>Note that in some rare circumstances, it may be possible for the flashing process to <strong>brick</strong> a counterfeit flashcart and render it permanently unusable. This is unlikely, but nevertheless only original listed flashcarts are supported. To reduce the chance of receiving a counterfeit card, it is recommended that you use a reputable site to buy your flashcart (such as <a href="http://www.nds-card.com/">NDS Card</a>)</p>
+</div>
 <hr />
-<h3 id="methods">Methods</h3>
+<h2 id="methods">Methods</h2>
 <hr />
-<h4 id="flashing-ntrboot-3ds-single-system">Flashing ntrboot (3DS Single System)</h4>
+<h3 id="flashing-ntrboot-3ds-single-system">Flashing ntrboot (3DS Single System)</h3>
 <p>This method requires nothing more than your stock unhacked 3DS and a compatible flashcart. This method uses the flashcart to run the ntrboot flasher <code>.nds</code> file on your 3DS. This means that your flashcart must support launching <code>.nds</code> files on your 3DS's version. See the flashcart table above for more information.</p>
-<p>Continue to <a href="flashing-ntrboot-(3ds-single-system)">Flashing ntrboot (3DS Single System)</a>
-{: .notice--primary}</p>
+<div class="admonition tip">
+<p>Continue to <a href="flashing-ntrboot-(3ds-single-system)">Flashing ntrboot (3DS Single System)</a></p>
+</div>
 <hr />
-<h4 id="flashing-ntrboot-3ds-multi-system">Flashing ntrboot (3DS Multi System)</h4>
+<h3 id="flashing-ntrboot-3ds-multi-system">Flashing ntrboot (3DS Multi System)</h3>
 <p>This method requires temporary access to a second 3DS family device that is already running boot9strap. This does not require your flashcart to support either 3DS's version.</p>
-<p>Continue to <a href="flashing-ntrboot-(3ds-multi-system)">Flashing ntrboot (3DS Multi System)</a>
-{: .notice--primary}</p>
+<div class="admonition tip">
+<p>Continue to <a href="flashing-ntrboot-(3ds-multi-system)">Flashing ntrboot (3DS Multi System)</a></p>
+</div>
 <hr />
-<h4 id="flashing-ntrboot-nds">Flashing ntrboot (NDS)</h4>
+<h3 id="flashing-ntrboot-nds">Flashing ntrboot (NDS)</h3>
 <p>This method requires temporary access to a Nintendo DS or Nintendo DS Lite that is compatible with your flashcart. This method uses the flashcart to run the ntrboot flasher <code>.nds</code> file on your NDS.</p>
-<p>Continue to <a href="flashing-ntrboot-(nds)">Flashing ntrboot (NDS)</a>
-{: .notice--primary}</p>
+<div class="admonition tip"></div>
+<p>Continue to <a href="flashing-ntrboot-(nds)">Flashing ntrboot (NDS)</a></p>
 <hr />
-<h4 id="flashing-ntrboot-dsi">Flashing ntrboot (DSi)</h4>
+<h3 id="flashing-ntrboot-dsi">Flashing ntrboot (DSi)</h3>
 <p>This method requires temporary access to a Nintendo DSi that is compatible with your flashcart. This method uses the flashcart to run the ntrboot flasher <code>.nds</code> file on your DSi. This means that your flashcart must support launching <code>.nds</code> files on your DSi's version. See the flashcart table above for more information.</p>
-<p>Continue to <a href="flashing-ntrboot-(dsi)">Flashing ntrboot (DSi)</a>
-{: .notice--primary}</p></div>
+<div class="admonition tip"></div>
+<p>Continue to <a href="flashing-ntrboot-(dsi)">Flashing ntrboot (DSi)</a></p></div>
             </div>
         </div>
 
