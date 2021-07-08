@@ -8,7 +8,7 @@
         <meta name="author" content="NH Discord Server.">
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Move EmuNAND - 3DS Hacks Guide</title>
+        <title>Uninstall CFW - 3DS Hacks Guide</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -81,7 +81,7 @@
 </li>
                                     
 <li>
-    <a href="move-emunand.html" class="dropdown-item active">Move EmuNAND</a>
+    <a href="move-emunand.html" class="dropdown-item">Move EmuNAND</a>
 </li>
                                     
 <li>
@@ -101,7 +101,7 @@
 </li>
                                     
 <li>
-    <a href="uninstall-cfw.html" class="dropdown-item">Uninstall CFW</a>
+    <a href="uninstall-cfw.html" class="dropdown-item active">Uninstall CFW</a>
 </li>
                                 </ul>
                             </li>
@@ -143,7 +143,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#move-emunand" class="nav-link">Move EmuNAND</a>
+            <li class="nav-item" data-level="1"><a href="#uninstall-cfw" class="nav-link">Uninstall CFW</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#required-reading" class="nav-link">Required Reading</a>
               <ul class="nav flex-column">
@@ -164,20 +164,29 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="move-emunand">Move EmuNAND</h1>
+<h1 id="uninstall-cfw">Uninstall CFW</h1>
 <hr />
 <h2 id="required-reading">Required Reading</h2>
-<p>This is an add-on section for moving the contents of a previous EmuNAND to your new SysNAND CFW, then removing the old EmuNAND partition. Note that the terms EmuNAND and RedNAND refer to slightly different implementations of <a href="http://3dbrew.org/wiki/NAND_Redirection">the same concept</a>.</p>
-<p>Note that if you have any payload files other than <code>GodMode9.firm</code> in the <code>/luma/payloads/</code> folder on your SD card, holding (Start) on boot will display a "chainloader menu" where you will have to use the D-Pad and the (A) button to select "GodMode9" for these instructions.</p>
+<p>This will completely remove CFW from your device, including boot9strap and Luma3DS, for the purpose of restoring the device to stock.</p>
 <div class="admonition danger">
 <p class="admonition-title">Important</p>
-<p>You MUST have already installed Luma3DS and boot9strap to use this.</p>
+<p>This is never the solution to fix any issues you may be encountering with your CFW installation. A better idea would be to ask (in English) for help at <a href="https://discord.gg/MWxPgEp">Nintendo Homebrew on Discord</a>.</p>
 </div>
+<p>Any unsigned (illegitimate) games will be rendered unusable and should be manually removed before starting this process by using the Data Management section of the System Settings. Use a <a href="https://github.com/FlagBrew/Checkpoint/releases/latest">save manager</a> to backup any saves for these unsigned (illegitimate) games you care about.</p>
+<div class="admonition danger">
+<p class="admonition-title">Brick risk</p>
+<p>If you have modified critical system software (such as editing the home menu, unbanning your console, region changing, etc.), uninstalling CFW WILL BRICK your device! Ensure that you follow all sections of this page.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Latest Luma3DS</p>
+<p>These instructions will only work on devices with a Luma3DS version of 8.0 or higher. If you have an older version of Luma, you must upgrade your setup before following these instructions. Follow <a href="checking-for-cfw">this page</a> to find your upgrade instructions.</p>
+</div>
+<p>Note that if you have any payload files other than <code>GodMode9.firm</code> in the <code>/luma/payloads/</code> folder on your SD card, holding (Start) on boot will display a "chainloader menu" where you will have to use the D-Pad and the (A) button to select "GodMode9" for these instructions. </p>
 <h2 id="what-you-need">What You Need</h2>
 <ul>
-<li>An existing EmuNAND</li>
 <li>The latest release of <a href="https://github.com/d0k3/GodMode9/releases/latest">GodMode9</a></li>
-<li>The latest release of <a href="https://github.com/Steveice10/FBI/releases/latest">FBI</a></li>
+<li>The latest release of <a href="https://github.com/MechanicalDragon0687/DSiWare-Uninstaller/releases/latest">DSiWare Uninstaller</a></li>
+<li><a href="{{ base_path }}/gm9_scripts/safety_test.gm9">safety_test.gm9</a></li>
 </ul>
 <h2 id="instructions">Instructions</h2>
 <h3 id="section-i-prep-work">Section I - Prep Work</h3>
@@ -186,124 +195,75 @@
 <li>Insert your SD card into your computer</li>
 <li>Copy <code>GodMode9.firm</code> from the GodMode9 <code>.zip</code> to the <code>/luma/payloads/</code> folder on your SD card</li>
 <li>Copy the <code>gm9</code> folder from the GodMode9 <code>.zip</code> to the root of your SD card</li>
+<li>Copy <code>DSiWareUninstaller.3dsx</code> to the <code>/3ds/</code> folder on your SD card</li>
+<li>Copy <code>safety_test.gm9</code> to the <code>/gm9/scripts/</code> folder on your SD card</li>
 <li>Reinsert your SD card into your device</li>
 </ol>
-<h3 id="section-ii-backup-sysnand-dsiware-saves">Section II - Backup SysNAND DSiWare Saves</h3>
-<div class="admonition tip">
-<p class="admonition-title">DSiWare games</p>
-<p>If you do not have any DSiWare games or saves that you care about, skip this section.</p>
-</div>
+<h3 id="section-ii-ds-mode-tests">Section II - DS Mode Tests</h3>
+<p>The purpose of this section is to check whether built-in DS mode applications will continue to work once CFW is uninstalled. If you skip this section, DS mode or its functions may be inaccessible until CFW is reinstalled.</p>
+<h4 id="ds-connection-settings-test">DS Connection Settings Test</h4>
 <ol>
-<li>Launch GodMode9 by holding (Start) during boot</li>
+<li>Power on your device</li>
+<li>Launch the System Settings Application</li>
+<li>Navigate to <code>Internet Settings</code> -&gt; <code>Nintendo DS Connection Settings</code>, then click OK</li>
+<li>You should boot into the Nintendo DS Connection Setup menu<ul>
+<li>If your console displays the Japanese version of Flipnote Studio, a black screen, or an error message, the test has failed</li>
+</ul>
+</li>
+<li>Power off your device</li>
+</ol>
+<h4 id="ds-download-play-test">DS Download Play Test</h4>
+<ol>
+<li>Power on your device</li>
+<li>Launch the Download Play application (<img alt="" src="{{ &quot;/images/download-play-icon.png&quot; | absolute_url }}" />{: height="24px" width="24px"})</li>
+<li>Select "Nintendo DS"</li>
+<li>If your device loads into a "Download software via DS Download Play" menu, the test was successful<ul>
+<li>If your console displays the Japanese version of Flipnote Studio, a black screen, or an error message, the test has failed</li>
+</ul>
+</li>
+<li>Power off your device</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Failed DS Mode test</p>
+<p>If either of these tests has failed, DS mode, DS Download Play, and/or DS Connection Settings may be inaccessible once CFW is uninstalled! You should <a href="../troubleshooting#dsi--ds-functionality-is-broken-after-completing-the-guide">fix DS mode</a> before continuing.</p>
+</div>
+<h3 id="section-iii-safety-test">Section III - Safety Test</h3>
+<p>The purpose of this section is to verify that the console will boot and that critical system functions, like System Settings and the keyboard, will work once CFW is uninstalled. <strong>If you skip this section, you may BRICK your device!</strong></p>
+<ol>
+<li>Press and hold (Start), and while holding (Start), power on your device. This will launch GodMode9</li>
 <li>If you are prompted to create an essential files backup, press (A) to do so, then press (A) to continue once it has completed</li>
 <li>If you are prompted to fix the RTC date&amp;time, press (A) to do so, then set the date and time, then press (A) to continue<ul>
-<li>Note that, if you had to fix the RTC date and time, you will have to fix the time in the System Settings as well after this guide</li>
+<li>Note that, if you had to fix the RTC date and time, you will have to fix the time in the System Settings as well after following this guide</li>
 </ul>
 </li>
-<li>Navigate to <code>[2:] SYSNAND TWLN</code> -&gt; <code>title</code></li>
-<li>Hold (R) and press (A) at the same time on <code>00030004</code> to select the folder, then select "Copy to 0:/gm9/out"<ul>
-<li>This process may take some time if you have many DSiWare games</li>
+<li>Press (Home) to bring up the action menu</li>
+<li>Select "Scripts..."</li>
+<li>Select "safety_test"</li>
+<li>Read the text on-screen and press (A) to continue</li>
+<li>You should boot into the regular 3DS Home Menu (any custom theme is irrelevant). If you do, continue these instructions<ul>
+<li>If you do not boot into the regular 3DS home menu (black screen, error screen, etc.), uninstalling CFW <strong>WILL BRICK YOUR DEVICE!</strong> </li>
 </ul>
 </li>
-<li>Press (B) twice to return to the main menu</li>
+<li>Launch the System Settings Application<ul>
+<li>If the console crashes at this point, the test has failed</li>
+</ul>
+</li>
+<li>Select "Other Settings"</li>
+<li>Select "Profile"</li>
+<li>Select "User Name"</li>
+<li>If you are able to enter a new user name, the test was successful<ul>
+<li>If the keyboard does not appear, the screen freezes, or the console crashes, the test has failed</li>
+</ul>
+</li>
+<li>Power off your device</li>
 </ol>
-<h3 id="section-iii-backup-gba-vc-saves">Section III - Backup GBA VC Saves</h3>
-<div class="admonition tip">
-<p class="admonition-title">GBA VC games</p>
-<p>If you do not have any GBA VC games or saves that you care about, skip this section.</p>
+<div class="admonition danger">
+<p class="admonition-title">Failed safety test</p>
+<p>If you do NOT boot into the regular 3DS Home Menu, or System Settings / your keyboard is inaccessible, <strong>DO NOT continue with these instructions</strong>! Join <a href="https://discord.gg/MWxPgEp">Nintendo Homebrew on Discord</a> and ask (in English) for someone there to assist you.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Other Virtual Console games</p>
-<p>Note that this is not necessary for any other kind of Virtual Console games (GBC, NES, etc)</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Output location</p>
-<p>The game will be outputted to the <code>/gm9/out/</code> folder on your SD card with the name <code>&lt;TitleID&gt;.gbavc.sav</code>.</p>
-<p>To identify a <code>&lt;TitleID&gt;.gbavc.sav</code> file's Title ID, you can get a listing of all games on the system and their corresponding Title IDs by hovering over <code>[A:] SYSNAND SD</code>, holding (R) and pressing (A) at the same time, then selecting "Search for titles".</p>
-</div>
+<h3 id="section-iv-nand-backup">Section IV - NAND Backup</h3>
 <ol>
-<li>Do the following process for each GBA VC game that you want to backup the save for:<ul>
-<li>Launch the GBA VC game</li>
-<li>Exit the GBA VC game</li>
-<li>Boot your device while holding (Start) to launch the Luma3DS chainloader menu</li>
-<li>Launch GodMode9 by pressing (A)</li>
-<li>Navigate to <code>[S:] SYSNAND VIRTUAL</code></li>
-<li>Press (A) on <code>agbsave.bin</code> to select it</li>
-<li>Select "AGBSAVE options..."</li>
-<li>Select "Dump GBA VC save"</li>
-<li>Press (A) to continue</li>
-<li>Press (Start) to reboot your device</li>
-</ul>
-</li>
-</ol>
-<h3 id="section-iv-copy-emunand-to-sysnand">Section IV - Copy EmuNAND to SysNAND</h3>
-<ol>
-<li>Launch GodMode9 by holding (Start) during boot</li>
-<li>Navigate to <code>[E:] EMUNAND VIRTUAL</code></li>
-<li>Press (A) on <code>nand.bin</code> to select it, then select "NAND image options...", then select "Restore SysNAND (safe)"</li>
-<li>Press (A) to unlock SysNAND overwriting, then input the key combo given<ul>
-<li>This will not overwrite your boot9strap installation</li>
-</ul>
-</li>
-<li>Input the key combo given to unlock SysNAND (lvl1) writing<ul>
-<li>This process will take some time</li>
-</ul>
-</li>
-<li>Once it has completed, press (A) to continue</li>
-<li>Press (B) to decline relocking write permissions if prompted</li>
-<li>Press (B) to return to the main menu</li>
-</ol>
-<h3 id="section-v-restore-dsiware-saves">Section V - Restore DSiWare Saves</h3>
-<div class="admonition tip">
-<p class="admonition-title">DSiWare saves</p>
-<p>If you did not backup DSiWare Saves earlier, skip this section.</p>
-</div>
-<ol>
-<li>Navigate to <code>[0:] SDCARD</code> -&gt; <code>gm9</code> -&gt; <code>out</code></li>
-<li>Press (Y) on the <code>00030004</code> folder to copy it</li>
-<li>Press (B) twice to return to the main menu</li>
-<li>Navigate to <code>[2:] SYSNAND TWLN</code> -&gt; <code>title</code></li>
-<li>Press (Y) to paste the <code>00030004</code> folder</li>
-<li>Select "Copy path(s)"</li>
-<li>Press (A) to unlock SysNAND (lvl1) writing, then input the key combo given</li>
-<li>Select "Overwrite file(s)"<ul>
-<li>This process may take some time if you have many DSiWare games</li>
-</ul>
-</li>
-<li>Press (B) to decline relocking write permissions if prompted</li>
-<li>Press (B) twice to return to the main menu</li>
-</ol>
-<h3 id="section-vi-restore-gba-vc-saves">Section VI - Restore GBA VC Saves</h3>
-<div class="admonition tip">
-<p class="admonition-title">GBA VC saves</p>
-<p>If you did not backup GBA VC Saves earlier, skip this section.</p>
-<p>To identify a <code>&lt;TitleID&gt;.gbavc.sav</code> file's Title ID, you can get a listing of all games on the system and their corresponding Title IDs by holding (R) and pressing (A) on the GodeMode9 main menu, then selecting "Search for titles".</p>
-</div>
-<ol>
-<li>Hold (R) and press (Start) at the same time to power off your device</li>
-<li>Power on your device into SysNAND</li>
-<li>Do the following process for each GBA VC game that you want to restore the save for:<ul>
-<li>Launch the GBA VC game</li>
-<li>Exit the GBA VC game</li>
-<li>Boot your device while holding (Start) to launch the Luma3DS chainloader menu</li>
-<li>Launch GodMode9 by pressing (A)</li>
-<li>Navigate to <code>[0:] SDCARD</code> -&gt; <code>gm9</code></li>
-<li>Press (Y) on the <code>&lt;TitleID&gt;.gbavc.sav</code> file you wish to restore to copy it</li>
-<li>Press (B) to return to the main menu</li>
-<li>Navigate to <code>[S:] SYSNAND VIRTUAL</code></li>
-<li>Press (A) on <code>agbsave.bin</code> to select it</li>
-<li>Select "AGBSAVE options..."</li>
-<li>Select "Inject GBA VC save"</li>
-<li>Press (A) to continue</li>
-<li>Press (Start) to reboot your device</li>
-<li>Launch the GBA VC game</li>
-<li>Exit the GBA VC game</li>
-</ul>
-</li>
-<li>Launch GodMode9 by holding (Start) during boot</li>
-</ol>
-<h3 id="section-vii-backup-sysnand">Section VII - Backup SysNAND</h3>
-<ol>
+<li>Press and hold (Start), and while holding (Start), power on your device. This will launch GodMode9</li>
 <li>Press (Home) to bring up the action menu</li>
 <li>Select "Scripts..."</li>
 <li>Select "GM9Megascript"</li>
@@ -311,51 +271,82 @@
 <li>Select "SysNAND Backup"</li>
 <li>Press (A) to confirm<ul>
 <li>This process will take some time</li>
-<li>If you get an error, make sure that you have at least 1.3GB of free space on your SD card</li>
+<li>If you get an error, ensure you have at least 1.3GB of free space on your SD card</li>
 </ul>
 </li>
+<li>Press (B) to return to the main menu</li>
+<li>Select “Exit”</li>
+<li>Press (Home) to bring up the action menu</li>
+<li>Select “Poweroff system” to power off your device</li>
+</ol>
+<h3 id="section-v-removing-illegitimate-content">Section V - Removing illegitimate content</h3>
+<div class="admonition warning">
+<p class="admonition-title">Back up your data</p>
+<p>This section will remove illegitimate content, like homebrew and dumped cartridges. If you have save data that you care about, back it up with a save manager before continuing!</p>
+</div>
+<ol>
+<li>Power on your device</li>
+<li>Open the System Settings application</li>
+<li>Navigate to Data Management &gt; Nintendo 3DS &gt; Software</li>
+<li>In this list of software, delete any non-Nintendo content you installed while using CFW<ul>
+<li>This includes common system software such as FBI, Anemone3DS, Luma Updater, Homebrew Launcher, Checkpoint, and others, along with any games and titles that you did <em>not</em> install from the eShop</li>
+</ul>
+</li>
+<li>Navigate to Data Management &gt; DSiWare</li>
+<li>In this list of software, delete any non-Nintendo content you installed while using CFW<ul>
+<li>This includes software such as TWiLightMenu++, along with any games and titles that you did <em>not</em> install from the eShop</li>
+<li>Failure to remove all CFW software from both the 3DS and DSiWare sections before uninstalling CFW may prevent or disable access to the Data Management menu after uninstalling CFW</li>
+</ul>
+</li>
+<li>Exit the System Settings application</li>
+<li>Launch the Download Play application (<img alt="" src="{{ &quot;/images/download-play-icon.png&quot; | absolute_url }}" />{: height="24px" width="24px"})</li>
+<li>Wait until you see the two buttons</li>
+<li>Press (Left Shoulder) + (D-Pad Down) + (Select) at the same time to open the Rosalina menu</li>
+<li>Select "Miscellaneous options"</li>
+<li>Select "Switch the hb. title to the current app."</li>
+<li>Press (B) to continue</li>
+<li>Press (B) to return to the Rosalina main menu</li>
+<li>Press (B) to exit the Rosalina menu</li>
+<li>Press (Home), then close Download Play</li>
+<li>Launch the Download Play application</li>
+<li>Your device should load the Homebrew Launcher</li>
+<li>Launch DSiWare Uninstaller from the list of homebrew</li>
+<li>Follow the prompts and allow the program to uninstall </li>
+<li>Once the process has succeeded, exit the Homebrew Launcher and power off your device</li>
+</ol>
+<h3 id="section-vi-system-format">Section VI - System Format</h3>
+<p>This section will ensure that all illegitimate tickets are removed, allowing eShop to work normally. This will remove all content from the 3DS and log you out of your NNID. Keep in mind that your console's encryption key will be shuffled, meaning that any old data will be rendered inaccessible, even if you have a backup of your SD contents.</p>
+<ol>
+<li>Power on your device</li>
+<li>Open the System Settings application</li>
+<li>Navigate to Other Settings -&gt; Next Page (until the final page) -&gt; Format System Memory</li>
+<li>Follow the prompts to format your 3DS</li>
+</ol>
+<h3 id="section-vii-running-uninstall-script">Section VII - Running Uninstall Script</h3>
+<div class="admonition warning">
+<p class="admonition-title">Double check that all steps are followed</p>
+<p>This is your final opportunity to verify that all safety steps above have been followed! Please ensure that you have followed all sections on this page, <strong>especially</strong> <code>Section III - Safety Test</code>, before continuing.</p>
+</div>
+<ol>
+<li>Press and hold (Start), and while holding (Start), power on your device. This will launch GodMode9</li>
+<li>Press (Home) to bring up the action menu</li>
+<li>Select "Scripts..."</li>
+<li>Select "GM9Megascript"</li>
+<li>Select "Hax Options"</li>
+<li>Select "Un-install Hax"</li>
+<li>When prompted, press (A) to proceed</li>
+<li>Press (A) to unlock SysNAND (lvl3) writing, then input the key combo given</li>
 <li>Press (A) to continue</li>
 <li>Press (B) to return to the main menu</li>
 <li>Select "Exit"</li>
 <li>Press (A) to relock write permissions if prompted</li>
-<li>Hold (R) and press (B) at the same time to eject your SD card</li>
-<li>Insert your SD card into your computer</li>
-<li>Copy <code>&lt;date&gt;_&lt;serialnumber&gt;_sysnand_###.bin</code> and <code>essential.exefs</code> from the <code>/gm9/out/</code> folder on your SD card to a safe location on your computer<ul>
-<li>Make backups in multiple locations (such as online file storage)</li>
-<li>These backups will save you from a brick and/or help you recover files from the NAND image if anything goes wrong in the future</li>
-</ul>
-</li>
-<li>Delete <code>&lt;date&gt;_&lt;serialnumber&gt;_sysnand_###.bin</code> and <code>&lt;date&gt;_&lt;serialnumber&gt;_sysnand_###.bin.sha</code> from the <code>/gm9/out/</code> folder on your SD card after copying it</li>
-<li><strong>Backup every file on your SD card to a folder on your computer; all files will be deleted in the following steps</strong></li>
-</ol>
-<h3 id="section-viii-format-sd-card">Section VIII - Format SD card</h3>
-<ol>
-<li>Reinsert your SD card into your device</li>
-<li>Press (Home) to bring up the action menu</li>
-<li>Select "More..."</li>
-<li>Select "SD format menu"</li>
-<li>Press (A) to confirm</li>
-<li>Select "No EmuNAND"</li>
-<li>Select "Auto"</li>
-<li>Press (A) to accept the label <code>GM9SD</code><ul>
-<li>Optionally, you may input a custom name for the SD card</li>
-</ul>
-</li>
-<li>When prompted, input the key combo given to confirm</li>
-<li>Hold (R) and press (B) at the same time to eject your SD card</li>
-<li>Insert your SD card into your computer</li>
-<li>Copy all your files back to your SD card<ul>
-<li>Ensure you replace the <code>boot.firm</code> file on your SD card with the one from your backup</li>
-</ul>
-</li>
-<li>Reinsert your SD card into your device</li>
-<li>Press (A) to remount your SD card</li>
-<li>Press (Start) to reboot</li>
-<li>If you get a black screen, <a href="troubleshooting#ts_sys_down">follow this troubleshooting guide</a></li>
+<li>Press (Start) to reboot your device</li>
 </ol>
 <hr />
 <div class="admonition tip">
-<h3 id="return-to-finalizing-setup">Return to <a href="../finalizing-setup">Finalizing Setup</a>.</h3>
+<p class="admonition-title">Success</p>
+<p>All custom firmware has been removed from your device.</p>
+<p>You can now remove any extra files and folders from the root of your SD card that are <em>not</em> the <code>Nintendo 3DS</code>, <code>DCIM</code> or <code>private</code> folders.</p>
 </div></div>
             </div>
         </div>
