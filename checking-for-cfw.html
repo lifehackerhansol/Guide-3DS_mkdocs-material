@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="3DS Hacks Guide.">
+        
         <meta name="author" content="NH Discord Server.">
         
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>3DS Hacks Guide</title>
+        <title>Checking for CFW - 3DS Hacks Guide</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
@@ -21,7 +21,7 @@
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand" href="index.html">3DS Hacks Guide</a>
@@ -34,7 +34,7 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem active">
+                            <li class="navitem">
                                 <a href="index.html" class="nav-link">Home</a>
                             </li>
                             <li class="dropdown">
@@ -121,25 +121,13 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#3ds-hacks-guide" class="nav-link">3DS Hacks Guide</a>
+            <li class="nav-item" data-level="1"><a href="#checking-for-cfw" class="nav-link">Checking for CFW</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#what-is-homebrew" class="nav-link">What is Homebrew?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#what-is-custom-firmware" class="nav-link">What is Custom Firmware?</a>
+            <li class="nav-item" data-level="2"><a href="#required-reading" class="nav-link">Required Reading</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#what-does-this-guide-install" class="nav-link">What does this guide install?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#what-can-i-do-with-custom-firmware" class="nav-link">What can I do with Custom Firmware?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#what-do-i-need-to-know-before-starting" class="nav-link">What do I need to know before starting?</a>
+            <li class="nav-item" data-level="2"><a href="#instructions" class="nav-link">Instructions</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -150,66 +138,42 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="3ds-hacks-guide">3DS Hacks Guide</h1>
+<h1 id="checking-for-cfw">Checking for CFW</h1>
 <hr />
-<p>A complete guide to 3DS custom firmware, from stock to boot9strap.</p>
+<h2 id="required-reading">Required Reading</h2>
+<p>This is an add-on section to check if your console already has a modern custom firmware.</p>
+<p>If your console already has an arm9loaderhax or boot9strap based custom firmware, you will need to follow the instructions indicated to upgrade your setup to a modern one.</p>
 <div class="admonition tip">
-<p>For complete guides to homebrew and custom firmware for other devices, check out <a href="https://hacks.guide">Hacks.Guide</a>.</p>
+<p class="admonition-title">Note</p>
+<p>If your console has a menuhax based CFW setup, you should <a href="troubleshooting#clear-home-menu-extdata">clear Home Menu's extdata</a>, then follow all instructions on your SysNAND.</p>
 </div>
-<div class="admonition danger">
-<p class="admonition-title">Important</p>
-<p>Thoroughly read all of the introductory pages (including this one!) before proceeding.</p>
-<p>This guide is for retail (consumer purchased; not from the Nintendo Developer Program) consoles <em>only</em>! If you have a developer ("PANDA") console, check out the <a href="https://panda.hacks.guide">Panda 3DS Hacks Guide</a>.</p>
-</div>
-<div class="admonition tip">
-<p>This guide is available in other languages! Click the <i class="fa fa-language" aria-hidden="true"></i> icon at the top right of the page to change the language.
-Alternatively, click <a href="https://crowdin.com/project/3ds-guide">here</a> to help to keep these translations up to date.</p>
-</div>
-<div class="admonition tip">
-<p>This guide needs <em>your</em> help to seed <a href="{{ &quot;rss.xml&quot; | absolute_url }}">these</a> torrents!</p>
-</div>
-<h2 id="what-is-homebrew">What is Homebrew?</h2>
-<p><a href="https://en.wikipedia.org/wiki/List_of_homebrew_video_games"><strong>Homebrew</strong></a> usually refers to software that is not authorized by Nintendo. This includes homebrew tools, applications, games, and emulators.</p>
-<p>In many cases, running homebrew on your device is 100% free using just the Nintendo 3DS Sound app. There are also various other exploits in commercial games and the browser to get homebrew running.</p>
-<h2 id="what-is-custom-firmware">What is Custom Firmware?</h2>
-<p><strong>Custom Firmware</strong> ("CFW") enables you to use more advanced hacks that userland homebrew can't easily do. For instance, signature patches let you install unsigned titles that appear right on your HOME Menu.</p>
-<p>CFW can be set up on any console on any version (but may require additional tools / accessories for versions &gt;11.3.0).</p>
-<h2 id="what-does-this-guide-install">What does this guide install?</h2>
-<p>This guide has the end goal of taking a completely unmodified 3DS from stock
-firmware to boot9strap powered Custom Firmware. On some versions, it utilizes homebrew as a stepping off point, but Custom Firmware is still the goal.</p>
-<p>boot9strap is the newest and best method of launching Custom Firmware that gives us nearly full control of the system only milliseconds into boot, which is similar to the effect of BootMii for the Wii. It gives us even earlier control than arm9loaderhax did, and, unlike standard sighax, boot9strap uses an NDMA overwrite exploit in order to gain Boot9 code execution. This means that any console running boot9strap is capable of dumping the console unique OTP (<code>OTP.bin</code>), the ARM11 bootrom (<code>boot11.bin</code>), and the ARM9 bootrom (<code>boot9.bin</code>).</p>
-<p>The benefits of boot9strap over other Custom Firmware launch methods are numerous, and as such it is recommended to use this guide over any other that relies on outdated software (such as menuhax + rxTools, arm9loaderhax, or even normal sighax).</p>
-<p>For information on how boot9strap works, please see <a href="https://arxiv.org/abs/1802.00359">this paper</a>.</p>
-<p>For a list of each of the calculated sighax signatures, see <a href="https://gist.github.com/SciresM/cdd2266efb80175d37eabbe86f9d8c52">this gist</a>.</p>
-<h2 id="what-can-i-do-with-custom-firmware">What can I do with Custom Firmware?</h2>
-<ul>
-<li>Play all game cards and eShop games, regardless of region</li>
-<li>Customize your HOME Menu with user-created <a href="https://themeplaza.art/">themes and splash screens</a></li>
-<li>Use "ROM hacks" for games that you own</li>
-<li>Take gameplay and application screenshots</li>
-<li>Backup, edit, and restore saves for many games</li>
-<li>Play games for older systems with various emulators, using RetroArch or other standalone emulators. (Works best with a New Nintendo 3DS)</li>
-<li>Install homebrew titles to your system, and have them appear on your HOME Menu</li>
-<li>Dump your game cards to a format you can install, and play them without needing the card</li>
-<li>New 3DS or New 2DS only: stream live gameplay to your PC wirelessly with NTR CFW</li>
-<li>Run many old Nintendo DS flash carts that were blocked long ago or never worked on Nintendo 3DS</li>
-<li>Safely update to the latest system version without fear of losing access to homebrew</li>
-</ul>
-<h2 id="what-do-i-need-to-know-before-starting">What do I need to know before starting?</h2>
-<ul>
-<li><strong>Before beginning the guide, you must know the risks of 3DS hacking: EVERY time you modify your system, there is always the potential for an UNRECOVERABLE brick. They're rare, but still a possibility so make sure you follow ALL directions EXACTLY.</strong></li>
-<li>If you have already hacked your 3DS before to get an EmuNAND setup, and would like to move the contents of your previous EmuNAND to your new SysNAND CFW, you should follow all instructions and restore your existing EmuNAND when prompted once you reach <a href="finalizing-setup">Finalizing Setup</a>.</li>
-<li>This guide will work on New 3DS, Old 3DS, New 2DS, and Old 2DS in all regions and all versions, including the latest version (11.14.0).</li>
-<li>If everything goes according to plan, you will lose no data and end up with everything that you started with (games, NNID, saves, etc will be preserved).</li>
-<li>Keep your device plugged in and charged throughout the entire process to avoid data loss or damage from an unexpected power-off!</li>
-<li>Your SD card should be <a href="http://www.howtogeek.com/245610/">MBR, not GPT</a> (the SD card that comes with your device will be MBR by default). The easiest way to test this is to check if the SD card works in your 3DS. If it works, the SD card is MBR.</li>
-<li>If you need to format a brand new SD card, you can format it to FAT32 using <a href="formatting-sd-(windows)">guiformat (Windows)</a>, <a href="formatting-sd-(mac)">Disk Utility (Mac)</a>, or <a href="formatting-sd-(linux)">cfdisk (Linux)</a>.</li>
-<li>The Old 2DS is essentially identical to the Old 3DS in terms of software, while the New 2DS is essentially identical to the New 3DS in terms of software. Any steps which say "Old 3DS" also apply to Old 2DS, and any steps which say "New 3DS" also apply to New 2DS.</li>
-<li>In order to follow this guide, you will need to be able to put files onto the SD card.</li>
-</ul>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Turn off your console</li>
+<li>Hold the (Select) button</li>
+<li>Turn on your console while still holding the (Select) button</li>
+<li>You should now see a configuration menu of some sort</li>
+</ol>
 <hr />
 <div class="admonition tip">
-<h3 id="continue-to-get-started">Continue to <a href="user-guide/get-started">Get Started</a></h3>
+<p class="admonition-title">HOME menu</p>
+<p>If your console boots to the normal home menu, return to <a href="get-started">Get Started</a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Version below 7.0.5</p>
+<p>If you see a Luma3DS version of 7.0.5 or lower, continue to <a href="a9lh-to-b9s">A9LH to B9S</a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Version 7.1</p>
+<p>If you see a Luma3DS version of 7.1, continue to <a href="updating-b9s">Updating B9S</a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Version 8.0+</p>
+<p>If you see a Luma3DS version of 8.0 or greater, continue to <a href="restoring-cfw">Restoring CFW</a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">None of the above</p>
+<p>If you see something not described by the above options, join <a href="https://discord.gg/MWxPgEp">Nintendo Homebrew on Discord</a> and ask, in English, for help.</p>
 </div></div>
             </div>
         </div>
@@ -289,8 +253,3 @@ firmware to boot9strap powered Custom Firmware. On some versions, it utilizes ho
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.2.1
-Build Date UTC : 2021-07-08 22:35:49.303214+00:00
--->
