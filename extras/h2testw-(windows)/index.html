@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#required-reading" class="md-skip">
+        <a href="#h2testw-windows" class="md-skip">
           Skip to content
         </a>
       
@@ -534,6 +534,8 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Windows
@@ -548,6 +550,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -755,6 +759,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -803,9 +809,8 @@
               
                 
                 
-                  <h1>Windows</h1>
-                
-                <p>{% include toc title="Table of Contents" %}</p>
+                <h1 id="h2testw-windows">H2testw (Windows)</h1>
+<hr />
 <h3 id="required-reading">Required Reading</h3>
 <p>This is an add-on section for checking your SD card for errors using h2testw.</p>
 <p>Depending on the size of your SD card and the speed of your computer, this process can take up to several hours!</p>
@@ -827,10 +832,17 @@
 <li>Wait until the process is completed</li>
 </ol>
 <hr />
-<p class="notice--success">If the test shows the result <code>Test finished without errors</code>, your SD card is good and you can delete all <code>.h2w</code> files on your SD card</p>
-<p class="notice--danger">If the test shows any other results, your SD card may be corrupted or damaged and you may have to replace it!</p>
-<h3 id="return-to-get-started">Return to <a href="get-started">Get Started</a></h3>
-<p>{: .notice--primary}</p>
+<div class="admonition tip">
+<p class="admonition-title">Success</p>
+<p>If the test shows the result <code>Test finished without errors</code>, your SD card is good and you can delete all <code>.h2w</code> files on your SD card</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Error</p>
+<p>If the test shows any other results, your SD card may be corrupted or damaged and you may have to replace it!</p>
+</div>
+<div class="admonition tip">
+<h3 id="return-to-get-started">Return to <a href="../../user-guide/get-started/">Get Started</a></h3>
+</div>
                 
                   
                 
