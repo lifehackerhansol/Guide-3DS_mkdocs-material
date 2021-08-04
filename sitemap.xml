@@ -81,6 +81,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://githubpages.hansol.ca/legacy/installing-boot9strap-%28browser%29/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://githubpages.hansol.ca/user-guide/bannerbomb3/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://githubpages.hansol.ca/user-guide/checking-for-cfw/</loc>
          <lastmod>2021-08-04</lastmod>
          <changefreq>daily</changefreq>
@@ -91,7 +101,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://githubpages.hansol.ca/user-guide/installing-boot9strap-%28browser%29/</loc>
+         <loc>https://githubpages.hansol.ca/user-guide/homebrew-launcher-%28pichaxx%29/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://githubpages.hansol.ca/user-guide/installing-boot9strap-%28fredtool%29/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://githubpages.hansol.ca/user-guide/installing-boot9strap-%28frogtool%29/</loc>
          <lastmod>2021-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -106,7 +126,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://githubpages.hansol.ca/user-guide/installing-boot9strap-%28pichaxx%29/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://githubpages.hansol.ca/user-guide/installing-boot9strap-%28soundhax%29/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://githubpages.hansol.ca/user-guide/installing-boot9strap-%28usm%29/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://githubpages.hansol.ca/user-guide/seedminer/</loc>
          <lastmod>2021-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
