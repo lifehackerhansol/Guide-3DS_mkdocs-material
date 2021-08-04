@@ -41,6 +41,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://githubpages.hansol.ca/extras/checking-for-cfw/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://githubpages.hansol.ca/extras/ctrtransfer/</loc>
          <lastmod>2021-08-04</lastmod>
          <changefreq>daily</changefreq>
@@ -66,7 +71,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://githubpages.hansol.ca/extras/restoring-cfw/</loc>
+         <loc>https://githubpages.hansol.ca/extras/restoring-updating-cfw/</loc>
          <lastmod>2021-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -87,11 +92,6 @@
     </url>
     <url>
          <loc>https://githubpages.hansol.ca/user-guide/bannerbomb3/</loc>
-         <lastmod>2021-08-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://githubpages.hansol.ca/user-guide/checking-for-cfw/</loc>
          <lastmod>2021-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
