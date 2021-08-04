@@ -13,14 +13,14 @@
         <meta name="author" content="NH Discord Server.">
       
       
-        <link rel="canonical" href="https://githubpages.hansol.ca/user-guide/installing-boot9strap-%28frogtool%29/">
+        <link rel="canonical" href="https://githubpages.hansol.ca/user-guide/installing-boot9strap-%28safeb9sinstaller%29/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
     
     
       
-        <title>Installing boot9strap (Frogtool) - 3DS Hacks Guide</title>
+        <title>Installing boot9strap (SafeB9SInstaller) - 3DS Hacks Guide</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installing-boot9strap-frogtool" class="md-skip">
+        <a href="#installing-boot9strap-safeb9sinstaller" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installing boot9strap (Frogtool)
+              Installing boot9strap (SafeB9SInstaller)
             
           </span>
         </div>
@@ -541,64 +541,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#required-reading" class="md-nav__link">
-    Required Reading
+  <a href="#instructions" class="md-nav__link">
+    Instructions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-you-need" class="md-nav__link">
-    What You Need
-  </a>
-  
-    <nav class="md-nav" aria-label="What You Need">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#section-i-prep-work" class="md-nav__link">
-    Section I - Prep Work
+  <a href="#section-i-launching-safeb9sinstaller" class="md-nav__link">
+    Section I - Launching SafeB9SInstaller
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#section-ii-patching-ds-download-play" class="md-nav__link">
-    Section II - Patching DS Download Play
+      
+        <li class="md-nav__item">
+  <a href="#section-ii-installing-boot9strap" class="md-nav__link">
+    Section II - Installing boot9strap
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#section-iii-flipnote-exploit" class="md-nav__link">
-    Section III - Flipnote Exploit
+      
+        <li class="md-nav__item">
+  <a href="#section-iii-configuring-luma3ds" class="md-nav__link">
+    Section III - Configuring Luma3DS
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#section-iv-configuring-luma3ds" class="md-nav__link">
-    Section IV - Configuring Luma3DS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#section-v-restoring-ds-download-play" class="md-nav__link">
-    Section V - Restoring DS Download Play
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#continue-to-finalizing-setup" class="md-nav__link">
     Continue to Finalizing Setup
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -615,78 +588,35 @@
               
                 
                 
-                <h1 id="installing-boot9strap-frogtool">Installing boot9strap (Frogtool)</h1>
+                <h1 id="installing-boot9strap-safeb9sinstaller">Installing boot9strap (SafeB9SInstaller)</h1>
 <hr />
-<h2 id="required-reading">Required Reading</h2>
-<p>We will now use our Homebrew Launcher access to run the Frogtool utility in order to inject the exploitable Japanese version of the "Flipnote Studio" title, which we then use to run b9sTool and install boot9strap.</p>
-<p>This is a currently working implementation of the "FIRM partitions known-plaintext" exploit detailed <a href="https://www.3dbrew.org/wiki/3DS_System_Flaws">here</a>.</p>
-<p>To use the <a href="https://wikipedia.org/wiki/Magnet_URI_scheme">magnet</a> links on this page, you will need a torrent client like <a href="http://dev.deluge-torrent.org/wiki/Download">Deluge</a>.</p>
-<h2 id="what-you-need">What You Need</h2>
-<ul>
-<li>Your <code>movable.sed</code> file from completing <a href="../seedminer/">Seedminer</a></li>
-<li><i class="fa fa-magnet" aria-hidden="true" title="This is a magnet link. Use a torrent client to download the file."></i> - <a href="magnet:?xt=urn:btih:d12278ea50bb3574f1fbd327f3d0e2292c70941f&amp;dn=frogcert.bin&amp;tr=https%3a%2f%2ftracker.fastdownload.xyz%3a443%2fannounce&amp;tr=https%3a%2f%2fopentracker.xyz%3a443%2fannounce&amp;tr=http%3a%2f%2fopen.trackerlist.xyz%3a80%2fannounce&amp;tr=http%3a%2f%2ft.nyaatracker.com%3a80%2fannounce&amp;tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&amp;tr=udp%3a%2f%2fopen.demonii.si%3a1337%2fannounce&amp;tr=udp%3a%2f%2ftracker.port443.xyz%3a6969%2fannounce&amp;tr=udp%3a%2f%2ftracker.vanitycore.co%3a6969%2fannounce&amp;tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&amp;tr=udp%3a%2f%2fretracker.lanta-net.ru%3a2710%2fannounce&amp;tr=udp%3a%2f%2fthetracker.org%3a80%2fannounce&amp;tr=http%3a%2f%2ftorrent.nwps.ws%3a80%2fannounce&amp;tr=udp%3a%2f%2ftracker.coppersurfer.tk%3a6969%2fannounce&amp;tr=udp%3a%2f%2ftracker.iamhansen.xyz%3a2000%2fannounce&amp;tr=udp%3a%2f%2fbt.xxx-tracker.com%3a2710%2fannounce&amp;tr=http%3a%2f%2f0d.kebhana.mx%3a443%2fannounce&amp;tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&amp;tr=udp%3a%2f%2ftracker4.itzmx.com%3a2710%2fannounce&amp;tr=udp%3a%2f%2ftracker.justseed.it%3a1337%2fannounce&amp;tr=http%3a%2f%2ftherightsize.net%3a1337%2fannounce&amp;tr=udp%3a%2f%2fretracker.hotplug.ru%3a2710%2fannounce&amp;tr=udp%3a%2f%2ftracker.internetwarriors.net%3a1337%2fannounce&amp;tr=udp%3a%2f%2f9.rarbg.com%3a2800%2fannounce&amp;tr=https%3a%2f%2f2.track.ga%3a443%2fannounce&amp;tr=udp%3a%2f%2fbigfoot1942.sektori.org%3a6969%2fannounce">frogcert.bin</a></li>
-<li>The latest release of <a href="https://github.com/zoogie/Frogtool/releases/latest">Frogtool</a></li>
-<li>The latest release of <a href="https://github.com/zoogie/b9sTool/releases/latest">b9sTool</a></li>
-<li>The latest release of <a href="https://github.com/LumaTeam/Luma3DS/releases/latest">Luma3DS</a></li>
-</ul>
-<h3 id="section-i-prep-work">Section I - Prep Work</h3>
+<h3 id="instructions">Instructions</h3>
+<h3 id="section-i-launching-safeb9sinstaller">Section I - Launching SafeB9SInstaller</h3>
 <ol>
-<li>Insert your SD card into your computer</li>
-<li>Copy your <code>movable.sed</code> file to the root of your SD card</li>
-<li>Copy <code>boot.firm</code> and <code>boot.3dsx</code> from the Luma3DS <code>.zip</code> to the root of your SD card</li>
-<li>Copy <code>boot.nds</code> (b9sTool) from the b9sTool release <code>.zip</code> to the root of your SD card</li>
-<li>Copy <code>Frogtool.3dsx</code> to the <code>/3ds/</code> folder on your SD card</li>
-<li>Copy <code>frogcert.bin</code> to the root of your SD card</li>
-<li>Reinsert your SD card into your device</li>
-<li>Power on your device</li>
+<li>Launch udsploit from the list of homebrew</li>
+<li>Once you see <code>patching kernel... done</code>, press (Start) to exit udsploit<ul>
+<li>This may take several tries</li>
+<li>If it freezes, just force the console to power off by holding the power button, then try again</li>
+</ul>
+</li>
+<li>Launch safehax from the list of homebrew<ul>
+<li>If you get a "PM INIT FAILED" error, make sure you ran udsploit with Wireless Communication turned on</li>
+<li>If you <em>still</em> get a "PM INIT FAILED" error, try using the <a href="https://github.com/TiniVi/safehax/releases/tag/r19">r19 release of safehax</a></li>
+<li>If it freezes, just force the console to power off by holding the power button, then try again</li>
+</ul>
+</li>
+<li>If the exploit was successful, you will have booted into SafeB9SInstaller</li>
 </ol>
-<h3 id="section-ii-patching-ds-download-play">Section II - Patching DS Download Play</h3>
+<h3 id="section-ii-installing-boot9strap">Section II - Installing boot9strap</h3>
 <ol>
-<li>Open the Homebrew Launcher using any method</li>
-<li>Launch Frogtool from the list of homebrew</li>
-<li>Select the "INJECT patched DS Download Play" option</li>
-<li>Frogtool will automatically run and inject the JPN version of Flipnote Studio into your DS Download Play</li>
-<li>Once this operation has finished, read the screens and check if the process was successful<ul>
-<li>If there are any errors or missing files, correct the problem and try again</li>
-</ul>
-</li>
-<li>If the process was successful, tap the touch screen, then select "BOOT patched DS Download Play"</li>
-<li>If the exploit was successful, your device will have loaded the JPN version of Flipnote Studio</li>
+<li>Wait for all safety checks to complete</li>
+<li>When prompted, input the key combo given to install boot9strap</li>
+<li>Once it has completed, press (A) to reboot your device</li>
 </ol>
-<h3 id="section-iii-flipnote-exploit">Section III - Flipnote Exploit</h3>
-<div class="admonition tip">
-<p class="admonition-title">Visual Guide</p>
-<p>If you would prefer a visual guide to this section, one is available <a href="https://zoogie.github.io/web/flipnote_directions/">here</a>.</p>
-</div>
+<h3 id="section-iii-configuring-luma3ds">Section III - Configuring Luma3DS</h3>
 <ol>
-<li>Complete the initial setup process for the launched game until you reach the main menu<ul>
-<li>Select the left option whenever prompted during the setup process</li>
-</ul>
-</li>
-<li>Using the touch-screen, select the large left box, then select the box with an SD card icon</li>
-<li>Once the menu loads, select the face icon, then the bottom right icon to continue</li>
-<li>Select the frog icon at the bottom left<ul>
-<li>Alternatively, press (X) or (UP) on the D-Pad depending on which is shown on the top screen</li>
-</ul>
-</li>
-<li>Select the second button along the top with a film-reel icon</li>
-<li>Scroll right until reel "3/3" is selected</li>
-<li>Tap the third box with the letter "A" in it</li>
-<li>Scroll left until reel "1/3" is selected</li>
-<li>Tap the fourth box with the letter "A" in it</li>
-<li>If the exploit was successful, your device will have loaded b9sTool</li>
-<li>Using the D-Pad, move to "Install boot9strap"</li>
-<li>Press (A), then press START and SELECT at the same time to begin the process</li>
-<li>Once complete and the bottom screen says "done.", exit b9sTool, then power off your device<ul>
-<li>You may have to force power off by holding the power button</li>
-<li>If you see the Luma configuration menu, continue without powering off</li>
-</ul>
-</li>
-</ol>
-<h3 id="section-iv-configuring-luma3ds">Section IV - Configuring Luma3DS</h3>
-<ol>
-<li>Boot your device while holding (Select) to launch the Luma configuration menu<ul>
-<li>If you encounter issues launching the Luma configuration menu, <a href="https://github.com/zoogie/b9sTool/blob/master/TROUBLESHOOTING.md">follow this troubleshooting guide</a></li>
+<li>Your device should have rebooted into the Luma3DS configuration menu<ul>
+<li>If you get a black screen, <a href="../../troubleshooting/#black-screen-on-sysnand-boot-after-installing-boot9strap">follow this troubleshooting guide</a></li>
 </ul>
 </li>
 <li>Use the (A) button and the D-Pad to turn on the following:<ul>
@@ -694,34 +624,11 @@
 </ul>
 </li>
 <li>Press (Start) to save and reboot<ul>
-<li>Your device should load the Home Menu after a short delay. If you get a black screen lasting longer than 5 minutes, <a href="../../troubleshooting/#black-screen-on-sysnand-boot-after-installing-boot9strap">follow this troubleshooting guide</a></li>
+<li>If you get an error, just continue the next page</li>
 </ul>
 </li>
 </ol>
-<h3 id="section-v-restoring-ds-download-play">Section V - Restoring DS Download Play</h3>
-<ol>
-<li>Launch the Download Play application (<img alt="" src="/images/download-play-icon.png" style="height:24px; width:24px" />)</li>
-<li>Wait until you see the two buttons<ul>
-<li>Do not press either of the buttons</li>
-</ul>
-</li>
-<li>Press (Left Shoulder) + (D-Pad Down) + (Select) at the same time to open the Rosalina menu</li>
-<li>Select "Miscellaneous options"</li>
-<li>Select "Switch the hb. title to the current app."</li>
-<li>Press (B) to continue</li>
-<li>Press (B) to return to the Rosalina main menu</li>
-<li>Press (B) to exit the Rosalina menu</li>
-<li>Press (Home), then close Download Play</li>
-<li>Relaunch the Download Play application</li>
-<li>Your device should load the Homebrew Launcher</li>
-<li>Launch Frogtool from the list of homebrew</li>
-<li>Select the "RESTORE patched DS Download Play" option</li>
-<li>Once this operation has finished, read the screens and check if the process was successful<ul>
-<li>If there are any errors or missing files, correct the problem and try again</li>
-</ul>
-</li>
-<li>If the process was successful, tap the touch screen, then press START to exit</li>
-</ol>
+<hr />
 <div class="admonition tip">
 <h3 id="continue-to-finalizing-setup">Continue to <a href="../../finalizing-setup/">Finalizing Setup</a></h3>
 </div>

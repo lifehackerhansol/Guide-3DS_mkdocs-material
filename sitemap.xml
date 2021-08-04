@@ -111,12 +111,37 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://githubpages.hansol.ca/user-guide/flashing-ntrboot-%283ds-multi-system%29/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://githubpages.hansol.ca/user-guide/flashing-ntrboot-%283ds-single-system%29/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://githubpages.hansol.ca/user-guide/flashing-ntrboot-%28dsi%29/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://githubpages.hansol.ca/user-guide/flashing-ntrboot-%28nds%29/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://githubpages.hansol.ca/user-guide/get-started/</loc>
          <lastmod>2021-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://githubpages.hansol.ca/user-guide/homebrew-launcher-%28pichaxx%29/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://githubpages.hansol.ca/user-guide/homebrew-launcher-%28soundhax%29/</loc>
          <lastmod>2021-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -146,6 +171,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://githubpages.hansol.ca/user-guide/installing-boot9strap-%28safeb9sinstaller%29/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://githubpages.hansol.ca/user-guide/installing-boot9strap-%28soundhax%29/</loc>
          <lastmod>2021-08-04</lastmod>
          <changefreq>daily</changefreq>
@@ -156,32 +186,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://githubpages.hansol.ca/user-guide/ntrboot/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://githubpages.hansol.ca/user-guide/seedminer/</loc>
-         <lastmod>2021-08-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://githubpages.hansol.ca/user-guide/ntrboot/flashing-ntrboot-%283ds-multi-system%29/</loc>
-         <lastmod>2021-08-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://githubpages.hansol.ca/user-guide/ntrboot/flashing-ntrboot-%283ds-single-system%29/</loc>
-         <lastmod>2021-08-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://githubpages.hansol.ca/user-guide/ntrboot/flashing-ntrboot-%28dsi%29/</loc>
-         <lastmod>2021-08-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://githubpages.hansol.ca/user-guide/ntrboot/flashing-ntrboot-%28nds%29/</loc>
-         <lastmod>2021-08-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://githubpages.hansol.ca/user-guide/ntrboot/ntrboot/</loc>
          <lastmod>2021-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
