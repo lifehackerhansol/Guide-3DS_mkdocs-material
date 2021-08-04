@@ -51,6 +51,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://githubpages.hansol.ca/extras/dumping-titles-and-game-cartridges/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://githubpages.hansol.ca/extras/godmode9-usage/</loc>
          <lastmod>2021-08-04</lastmod>
          <changefreq>daily</changefreq>
@@ -87,6 +92,16 @@
     </url>
     <url>
          <loc>https://githubpages.hansol.ca/legacy/installing-boot9strap-%28browser%29/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://githubpages.hansol.ca/legacy/installing-boot9strap-%28safecerthax%29/</loc>
+         <lastmod>2021-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://githubpages.hansol.ca/legacy/installing-boot9strap-%28ssloth-browser%29/</loc>
          <lastmod>2021-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
